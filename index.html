@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServeStack POS — Run Your Restaurant, Not After It</title>
+    <meta name="description" content="ServeStack helps restaurants and cafes run smoother service, faster billing, smarter inventory, and clearer daily profits — all from one simple system.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F6FEB'/%3E%3Cpath d='M30 35h40v6H30zm0 12h40v6H30zm0 12h25v6H30z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M9 11h14v2H9zm0 5h14v2H9zm0 5h9v2H9z" fill="white"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#1F6FEB"/>
+                                <stop offset="1" stop-color="#22C55E"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">ServeStack</span>
+            </a>
+            <div class="nav-links">
+                <a href="#challenges">Challenges</a>
+                <a href="#how">How it Works</a>
+                <a href="#savings">Savings</a>
+                <a href="#dashboard">Dashboard</a>
+            </div>
+            <a href="#demo" class="btn btn-primary btn-sm">Book Free Demo</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-blob hero-bg-blob-1"></div>
+        <div class="hero-bg-blob hero-bg-blob-2"></div>
+        <div class="container hero-inner">
+            <div class="hero-text reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    <span>Built for restaurants &amp; cafés</span>
+                </div>
+                <h1 class="hero-title">
+                    Run Your Restaurant.<br>
+                    <span class="text-gradient">Not After It.</span>
+                </h1>
+                <p class="hero-sub">
+                    From taking orders to kitchen coordination, billing, inventory, expenses,
+                    GST reports, and daily sales — ServeStack helps you manage everything
+                    from one simple system.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#demo" class="btn btn-primary btn-lg">
+                        Book Free Demo
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="#how" class="btn btn-ghost btn-lg">
+                        <span class="play-circle">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                        </span>
+                        Watch How It Works
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-avatars">
+                        <span class="avatar" style="background:#FCA5A5">A</span>
+                        <span class="avatar" style="background:#FCD34D">R</span>
+                        <span class="avatar" style="background:#86EFAC">S</span>
+                        <span class="avatar" style="background:#93C5FD">M</span>
+                    </div>
+                    <div class="trust-text">
+                        <strong>2,400+</strong> restaurants &amp; cafés run smoother with ServeStack
+                    </div>
+                </div>
+            </div>
+            <div class="hero-illu reveal" data-delay="120">
+                <!-- Busy restaurant illustration -->
+                <svg class="hero-svg" viewBox="0 0 560 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#F1F5F9"/>
+                            <stop offset="1" stop-color="#E2E8F0"/>
+                        </linearGradient>
+                        <linearGradient id="counterGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#FFFFFF"/>
+                            <stop offset="1" stop-color="#F1F5F9"/>
+                        </linearGradient>
+                        <linearGradient id="posGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#1F6FEB"/>
+                            <stop offset="1" stop-color="#3B82F6"/>
+                        </linearGradient>
+                        <linearGradient id="kdsGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#22C55E"/>
+                            <stop offset="1" stop-color="#16A34A"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Back wall -->
+                    <rect x="0" y="0" width="560" height="380" fill="#F8FAFC"/>
+                    <!-- Window arch -->
+                    <path d="M40 60 Q80 30 120 60 L120 200 L40 200 Z" fill="#E0F2FE" stroke="#BFDBFE" stroke-width="2"/>
+                    <line x1="80" y1="30" x2="80" y2="200" stroke="#BFDBFE" stroke-width="2"/>
+                    <line x1="40" y1="100" x2="120" y2="100" stroke="#BFDBFE" stroke-width="2"/>
+                    <circle cx="100" cy="80" r="10" fill="#FDE68A"/>
+                    <!-- Pendant lamps -->
+                    <line x1="180" y1="0" x2="180" y2="50" stroke="#94A3B8" stroke-width="2"/>
+                    <ellipse cx="180" cy="55" rx="14" ry="8" fill="#FCA5A5"/>
+                    <line x1="380" y1="0" x2="380" y2="40" stroke="#94A3B8" stroke-width="2"/>
+                    <ellipse cx="380" cy="45" rx="12" ry="7" fill="#FCD34D"/>
+                    <!-- Menu board on wall -->
+                    <rect x="200" y="40" width="160" height="80" rx="10" fill="#1E293B"/>
+                    <rect x="210" y="50" width="140" height="6" rx="3" fill="#FCA5A5"/>
+                    <rect x="210" y="64" width="100" height="5" rx="2.5" fill="#FCD34D"/>
+                    <rect x="210" y="76" width="120" height="5" rx="2.5" fill="#86EFAC"/>
+                    <rect x="210" y="88" width="80" height="5" rx="2.5" fill="#93C5FD"/>
+                    <rect x="210" y="100" width="110" height="5" rx="2.5" fill="#FCA5A5"/>
+                    <!-- Floor -->
+                    <rect x="0" y="380" width="560" height="140" fill="url(#floorGrad)"/>
+                    <line x1="0" y1="380" x2="560" y2="380" stroke="#CBD5E1" stroke-width="1.5"/>
+                    <!-- Tables -->
+                    <g class="float-1">
+                        <ellipse cx="80" cy="430" rx="40" ry="12" fill="#CBD5E1"/>
+                        <ellipse cx="80" cy="425" rx="40" ry="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                        <rect x="76" y="425" width="8" height="20" fill="#CBD5E1"/>
+                        <circle cx="65" cy="420" r="6" fill="#FBBF24"/>
+                        <circle cx="92" cy="421" r="5" fill="#F87171"/>
+                    </g>
+                    <g class="float-2">
+                        <ellipse cx="480" cy="440" rx="45" ry="13" fill="#CBD5E1"/>
+                        <ellipse cx="480" cy="434" rx="45" ry="13" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                        <rect x="476" y="434" width="8" height="22" fill="#CBD5E1"/>
+                        <rect x="495" y="420" width="14" height="20" rx="2" fill="#22C55E"/>
+                    </g>
+                    <!-- Counter (POS) -->
+                    <g class="float-3">
+                        <rect x="160" y="320" width="240" height="80" rx="12" fill="url(#counterGrad)" stroke="#CBD5E1" stroke-width="1.5"/>
+                        <rect x="160" y="380" width="240" height="20" rx="6" fill="#E2E8F0"/>
+                        <!-- POS screen -->
+                        <rect x="180" y="240" width="120" height="90" rx="10" fill="#0F172A"/>
+                        <rect x="188" y="248" width="104" height="74" rx="6" fill="url(#posGrad)"/>
+                        <rect x="196" y="258" width="40" height="6" rx="3" fill="white" opacity="0.9"/>
+                        <rect x="196" y="270" width="60" height="4" rx="2" fill="white" opacity="0.6"/>
+                        <rect x="196" y="280" width="50" height="4" rx="2" fill="white" opacity="0.6"/>
+                        <rect x="196" y="295" width="88" height="20" rx="4" fill="white" opacity="0.25"/>
+                        <circle cx="240" cy="305" r="4" fill="#FCD34D"/>
+                        <!-- POS stand -->
+                        <rect x="232" y="330" width="16" height="6" fill="#475569"/>
+                        <!-- Cash drawer -->
+                        <rect x="320" y="340" width="60" height="40" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                        <rect x="328" y="350" width="44" height="6" rx="2" fill="#22C55E"/>
+                        <rect x="328" y="362" width="20" height="4" rx="2" fill="#CBD5E1"/>
+                        <rect x="352" y="362" width="20" height="4" rx="2" fill="#CBD5E1"/>
+                    </g>
+                    <!-- Waiter with tray -->
+                    <g class="float-1">
+                        <circle cx="400" cy="230" r="14" fill="#FCD34D"/>
+                        <path d="M386 244 Q400 240 414 244 L414 290 L386 290 Z" fill="#1F6FEB"/>
+                        <rect x="388" y="290" width="8" height="32" rx="3" fill="#1E293B"/>
+                        <rect x="404" y="290" width="8" height="32" rx="3" fill="#1E293B"/>
+                        <!-- Tray -->
+                        <ellipse cx="400" cy="285" rx="22" ry="4" fill="#94A3B8"/>
+                        <rect x="388" y="270" width="24" height="14" rx="3" fill="#FFFFFF" stroke="#CBD5E1"/>
+                        <circle cx="395" cy="277" r="4" fill="#F87171"/>
+                        <circle cx="405" cy="277" r="4" fill="#22C55E"/>
+                    </g>
+                    <!-- Customer at counter -->
+                    <g class="float-2">
+                        <circle cx="100" cy="280" r="12" fill="#FCA5A5"/>
+                        <path d="M88 292 Q100 288 112 292 L112 326 L88 326 Z" fill="#22C55E"/>
+                        <rect x="90" y="326" width="6" height="26" rx="3" fill="#1E293B"/>
+                        <rect x="104" y="326" width="6" height="26" rx="3" fill="#1E293B"/>
+                    </g>
+                    <!-- Chef in kitchen window -->
+                    <g class="float-3">
+                        <rect x="0" y="180" width="60" height="200" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+                        <circle cx="30" cy="230" r="10" fill="#FED7AA"/>
+                        <path d="M20 220 Q30 215 40 220 L40 226 L20 226 Z" fill="white"/>
+                        <path d="M22 240 Q30 238 38 240 L38 290 L22 290 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+                        <!-- KDS -->
+                        <rect x="6" y="305" width="48" height="32" rx="4" fill="#0F172A"/>
+                        <rect x="9" y="308" width="42" height="26" rx="2" fill="url(#kdsGrad)"/>
+                        <rect x="12" y="313" width="20" height="3" rx="1.5" fill="white"/>
+                        <rect x="12" y="320" width="28" height="3" rx="1.5" fill="white" opacity="0.7"/>
+                        <rect x="12" y="327" width="14" height="3" rx="1.5" fill="#FCD34D"/>
+                    </g>
+                    <!-- QR Order phone on table -->
+                    <g class="pulse-soft">
+                        <rect x="55" y="402" width="22" height="34" rx="3" fill="#0F172A"/>
+                        <rect x="58" y="406" width="16" height="26" rx="1" fill="#1F6FEB"/>
+                        <rect x="61" y="411" width="10" height="2" fill="white"/>
+                        <rect x="61" y="416" width="6" height="2" fill="white"/>
+                        <rect x="61" y="421" width="8" height="2" fill="#22C55E"/>
+                    </g>
+                    <!-- Floating order notification -->
+                    <g class="float-2">
+                        <rect x="430" y="100" width="110" height="58" rx="12" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+                        <circle cx="448" cy="120" r="8" fill="#22C55E"/>
+                        <path d="M444 120 l3 3 5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="462" y="115" width="60" height="5" rx="2" fill="#0F172A"/>
+                        <rect x="462" y="125" width="40" height="4" rx="2" fill="#94A3B8"/>
+                        <rect x="440" y="140" width="86" height="10" rx="5" fill="#F1F5F9"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 — CHALLENGES -->
+    <section class="section" id="challenges">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">The reality of running a restaurant</span>
+                <h2 class="section-title">Does Any of This Sound Familiar?</h2>
+                <p class="section-sub">Every day, owners and managers deal with the same small fires. They add up to big lost time, money, and patience.</p>
+            </div>
+            <div class="challenges-grid">
+                <div class="challenge-card reveal">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#FEF3C7"/><circle cx="40" cy="40" r="26" fill="#FDE68A"/><path d="M40 26 v16 l10 6" stroke="#92400E" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="40" cy="40" r="3" fill="#92400E"/></svg>
+                    </div>
+                    <h3>Customers waiting too long to order</h3>
+                    <p>Tables sit empty. Waiters are stretched. Lunch rush becomes a bottleneck.</p>
+                </div>
+                <div class="challenge-card reveal" data-delay="60">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#FEE2E2"/><rect x="22" y="20" width="36" height="42" rx="4" fill="#FECACA"/><line x1="28" y1="30" x2="50" y2="30" stroke="#B91C1C" stroke-width="2"/><line x1="28" y1="38" x2="46" y2="38" stroke="#B91C1C" stroke-width="2"/><line x1="28" y1="46" x2="52" y2="46" stroke="#B91C1C" stroke-width="2"/><line x1="40" y1="24" x2="44" y2="62" stroke="#EF4444" stroke-width="2.5"/></svg>
+                    </div>
+                    <h3>Waiters writing incorrect orders</h3>
+                    <p>Handwritten slips get lost, misread, or stained. Remakes waste food and time.</p>
+                </div>
+                <div class="challenge-card reveal" data-delay="120">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#E0E7FF"/><path d="M22 30 q9 -6 18 0 t18 0 v22 q-9 -6 -18 0 t-18 0 z" fill="#C7D2FE"/><circle cx="32" cy="44" r="2" fill="#4338CA"/><circle cx="44" cy="40" r="2" fill="#4338CA"/><path d="M30 50 q10 6 20 0" stroke="#4338CA" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Kitchen receiving confusing instructions</h3>
+                    <p>Shouted orders and half-torn tickets slow down the line and frustrate chefs.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#DCFCE7"/><rect x="24" y="28" width="32" height="28" rx="4" fill="#BBF7D0"/><rect x="24" y="28" width="32" height="8" fill="#86EFAC"/><circle cx="40" cy="50" r="6" fill="white"/><path d="M40 44 v12 M34 50 h12" stroke="#16A34A" stroke-width="2"/></svg>
+                    </div>
+                    <h3>Missing inventory during peak hours</h3>
+                    <p>The chef stops mid-service to ask, "Are we out of tomatoes again?"</p>
+                </div>
+                <div class="challenge-card reveal" data-delay="60">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#FFE4E6"/><path d="M28 50 l12 -16 l12 16 z" fill="#FECDD3"/><rect x="34" y="34" width="12" height="6" fill="#F43F5E"/><path d="M30 56 h20" stroke="#9F1239" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>No idea which dishes actually make profit</h3>
+                    <p>The bestseller isn't always the most profitable. Most owners can't tell the difference.</p>
+                </div>
+                <div class="challenge-card reveal" data-delay="120">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#FEF3C7"/><rect x="22" y="26" width="36" height="32" rx="4" fill="#FDE68A"/><circle cx="40" cy="42" r="9" fill="#F59E0B"/><path d="M40 36 v6 l4 3" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M28 24 l-4 -6 m28 6 l4 -6" stroke="#92400E" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Cash mismatch at closing</h3>
+                    <p>Till short, drawer unaccounted, and the team goes home with questions left open.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#DBEAFE"/><rect x="24" y="22" width="32" height="38" rx="4" fill="#BFDBFE"/><rect x="28" y="28" width="24" height="3" fill="#1D4ED8"/><rect x="28" y="35" width="20" height="3" fill="#3B82F6"/><rect x="28" y="42" width="22" height="3" fill="#3B82F6"/><rect x="28" y="50" width="14" height="6" fill="#1F6FEB"/></svg>
+                    </div>
+                    <h3>Struggling with GST reports</h3>
+                    <p>Month-end becomes a scramble of receipts, ledgers, and an accountant on call.</p>
+                </div>
+                <div class="challenge-card reveal" data-delay="60">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#F3E8FF"/><circle cx="30" cy="34" r="6" fill="#C4B5FD"/><circle cx="50" cy="34" r="6" fill="#C4B5FD"/><circle cx="40" cy="46" r="6" fill="#A78BFA"/><path d="M22 56 q18 -8 36 0" stroke="#7C3AED" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Managing multiple staff manually</h3>
+                    <p>Shifts, tips, attendance, permissions — all moving parts, all on paper.</p>
+                </div>
+                <div class="challenge-card reveal" data-delay="120">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#CFFAFE"/><rect x="24" y="30" width="32" height="22" rx="3" fill="#A5F3FC"/><path d="M28 42 l6 -6 l5 5 l8 -8 l5 5" stroke="#0E7490" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>No visibility into daily sales</h3>
+                    <p>You only know if the day was good when you count cash at midnight.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="34" fill="#FCE7F3"/><path d="M28 32 a12 12 0 0 1 24 0 v6 h-4 v-6 a8 8 0 0 0 -16 0 v6 h-4 z" fill="#F9A8D4"/><rect x="26" y="38" width="28" height="20" rx="4" fill="#FBCFE8"/><path d="M40 50 a3 3 0 0 0 -3 -3 h-2 v6 h2 a3 3 0 0 0 3 -3z" fill="#BE185D"/></svg>
+                    </div>
+                    <h3>Constantly answering phone calls</h3>
+                    <p>Reservations, queries, complaints, deliveries — you become the switchboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — HOW IT MAKES THE DAY EASIER -->
+    <section class="section section-soft" id="how">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">A service that runs itself</span>
+                <h2 class="section-title">From Table Tap to Tidy Books — In Minutes</h2>
+                <p class="section-sub">What used to take shouting, slips, and stress now happens in the background, exactly the way you'd run it yourself.</p>
+            </div>
+            <ol class="flow">
+                <li class="flow-item reveal">
+                    <div class="flow-badge" style="--c:#1F6FEB">
+                        <span>1</span>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-icon" style="--c:#1F6FEB;--bg:#DBEAFE">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
+                        </div>
+                        <div class="flow-body">
+                            <h3>Customer scans QR and orders</h3>
+                            <p>No app to download. No waiting for the waiter. Browsing and ordering from the phone.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="flow-item reveal" data-delay="60">
+                    <div class="flow-badge" style="--c:#22C55E">
+                        <span>2</span>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-icon" style="--c:#22C55E;--bg:#DCFCE7">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+                        </div>
+                        <div class="flow-body">
+                            <h3>Order instantly reaches the kitchen</h3>
+                            <p>The kitchen display system lights up. No shouts, no handwritten chits, no delays.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="flow-item reveal" data-delay="120">
+                    <div class="flow-badge" style="--c:#F59E0B">
+                        <span>3</span>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-icon" style="--c:#F59E0B;--bg:#FEF3C7">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3M6 11v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8"/></svg>
+                        </div>
+                        <div class="flow-body">
+                            <h3>Kitchen starts preparing</h3>
+                            <p>Chefs see clear tickets with modifiers, table numbers, and prep times.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="flow-item reveal" data-delay="180">
+                    <div class="flow-badge" style="--c:#8B5CF6">
+                        <span>4</span>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-icon" style="--c:#8B5CF6;--bg:#EDE9FE">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+                        </div>
+                        <div class="flow-body">
+                            <h3>Waiter gets a status update</h3>
+                            <p>The team knows exactly when to plate, when to serve, and when to clear.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="flow-item reveal" data-delay="240">
+                    <div class="flow-badge" style="--c:#1F6FEB">
+                        <span>5</span>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-icon" style="--c:#1F6FEB;--bg:#DBEAFE">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M2 20h20M8 16v4M16 16v4"/></svg>
+                        </div>
+                        <div class="flow-body">
+                            <h3>Bill generated in seconds</h3>
+                            <p>Split, merge, or apply offers — bills are accurate and printed or sent in a tap.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="flow-item reveal" data-delay="300">
+                    <div class="flow-badge" style="--c:#22C55E">
+                        <span>6</span>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-icon" style="--c:#22C55E;--bg:#DCFCE7">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h12"/></svg>
+                        </div>
+                        <div class="flow-body">
+                            <h3>Inventory updates automatically</h3>
+                            <p>Every dish sold quietly deducts the right ingredients from your stock count.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="flow-item reveal" data-delay="360">
+                    <div class="flow-badge" style="--c:#F97316">
+                        <span>7</span>
+                    </div>
+                    <div class="flow-card">
+                        <div class="flow-icon" style="--c:#F97316;--bg:#FFEDD5">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/></svg>
+                        </div>
+                        <div class="flow-body">
+                            <h3>Sales reports ready before closing</h3>
+                            <p>You walk out the door already knowing how the day really went.</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — TIMELINE -->
+    <section class="section" id="timeline">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">From morning to closing</span>
+                <h2 class="section-title">A Whole Day, Made Smoother</h2>
+                <p class="section-sub">ServeStack quietly supports every moment of service — so nothing falls between the cracks, and you end the day on top of it.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal">
+                    <div class="t-dot" style="--c:#1F6FEB"></div>
+                    <div class="t-card">
+                        <span class="t-time">07:00 AM</span>
+                        <h3>Opening the restaurant</h3>
+                        <p>Day starts with a clear dashboard — yesterday's summary, today's expected covers, and tables ready to go.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="60">
+                    <div class="t-dot" style="--c:#22C55E"></div>
+                    <div class="t-card">
+                        <span class="t-time">08:00 AM</span>
+                        <h3>Staff login &amp; shift start</h3>
+                        <p>Each team member signs in once. Roles, permissions, and tables are auto-assigned.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="120">
+                    <div class="t-dot" style="--c:#F59E0B"></div>
+                    <div class="t-card">
+                        <span class="t-time">08:30 AM</span>
+                        <h3>Inventory &amp; prep check</h3>
+                        <p>Low-stock alerts are already waiting. The chef knows what to prep, in what quantity.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="180">
+                    <div class="t-dot" style="--c:#F97316"></div>
+                    <div class="t-card">
+                        <span class="t-time">10:00 AM</span>
+                        <h3>Breakfast orders flowing</h3>
+                        <p>QR orders and counter orders land on the same screen. Service is calm and quick.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="240">
+                    <div class="t-dot" style="--c:#EF4444"></div>
+                    <div class="t-card">
+                        <span class="t-time">12:30 PM</span>
+                        <h3>Lunch rush handled</h3>
+                        <p>Kitchen display updates in real time. Waiters see what's ready, and tables turn faster.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="300">
+                    <div class="t-dot" style="--c:#8B5CF6"></div>
+                    <div class="t-card">
+                        <span class="t-time">02:00 PM</span>
+                        <h3>Live dashboard &amp; insights</h3>
+                        <p>You see top-selling dishes, busy hours, and live revenue — without leaving the floor.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="360">
+                    <div class="t-dot" style="--c:#0EA5E9"></div>
+                    <div class="t-card">
+                        <span class="t-time">05:00 PM</span>
+                        <h3>Payments &amp; expense entry</h3>
+                        <p>Bills close in seconds. Vendor and petty expenses get logged before they are forgotten.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="420">
+                    <div class="t-dot" style="--c:#1F6FEB"></div>
+                    <div class="t-card">
+                        <span class="t-time">10:30 PM</span>
+                        <h3>Closing sales report</h3>
+                        <p>One clean report tells you exactly how the day went — sales, costs, profit, and trends.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" data-delay="480">
+                    <div class="t-dot" style="--c:#22C55E"></div>
+                    <div class="t-card">
+                        <span class="t-time">11:00 PM</span>
+                        <h3>GST-ready data</h3>
+                        <p>Taxes, splits, and reconciliations are already aligned. Filing becomes a 10-minute task.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 — SAVINGS -->
+    <section class="section section-soft" id="savings">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">Where the money stays</span>
+                <h2 class="section-title">Small Wins, Added Up, Become Big Money</h2>
+                <p class="section-sub">ServeStack doesn't add another screen to your day. It quietly removes the leaks, delays, and guesswork that quietly cost you the most.</p>
+            </div>
+            <div class="savings-grid">
+                <div class="saving-card reveal">
+                    <div class="saving-icon" style="background:#DBEAFE;color:#1F6FEB">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="saving-stat">+38%</div>
+                    <h3>Serve more customers during peak hours</h3>
+                    <p>Faster turnover, faster billing, fewer bottlenecks when it matters most.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="60">
+                    <div class="saving-icon" style="background:#FEE2E2;color:#EF4444">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+                    </div>
+                    <div class="saving-stat">−92%</div>
+                    <h3>Reduce order mistakes</h3>
+                    <p>Digital orders mean fewer remakes, fewer apologies, and happier guests.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="120">
+                    <div class="saving-icon" style="background:#DCFCE7;color:#22C55E">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
+                    </div>
+                    <div class="saving-stat">−27%</div>
+                    <h3>Reduce food wastage</h3>
+                    <p>Real-time stock counts help you buy better and prep smarter.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="180">
+                    <div class="saving-icon" style="background:#FEF3C7;color:#F59E0B">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+                    </div>
+                    <div class="saving-stat">100%</div>
+                    <h3>Know your best-selling dishes</h3>
+                    <p>Spot what really moves and design your menu around it.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="240">
+                    <div class="saving-icon" style="background:#FFEDD5;color:#F97316">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <div class="saving-stat">24/7</div>
+                    <h3>Control inventory automatically</h3>
+                    <p>Stock levels update with every dish sold. Alerts arrive before you run out.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="300">
+                    <div class="saving-icon" style="background:#E0E7FF;color:#6366F1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <div class="saving-stat">Live</div>
+                    <h3>Identify slow business hours</h3>
+                    <p>Plan offers, schedules, and restocks using real hourly patterns.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="360">
+                    <div class="saving-icon" style="background:#CFFAFE;color:#0EA5E9">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M5 5h11a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h12"/></svg>
+                    </div>
+                    <div class="saving-stat">−75%</div>
+                    <h3>Track expenses easily</h3>
+                    <p>Capture every vendor, bill, and petty expense the moment it happens.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="480">
+                    <div class="saving-icon" style="background:#FCE7F3;color:#DB2777">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+                    </div>
+                    <div class="saving-stat">−80%</div>
+                    <h3>Spend less time on paperwork</h3>
+                    <p>Reports, GST summaries, and end-of-day numbers are already done.</p>
+                </div>
+                <div class="saving-card reveal" data-delay="540">
+                    <div class="saving-icon" style="background:#D1FAE5;color:#059669">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="saving-stat">+45%</div>
+                    <h3>Increase staff productivity</h3>
+                    <p>Less running around, more time spent with the guests that matter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 — BUSINESS TYPES -->
+    <section class="section" id="businesses">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">Built for every food business</span>
+                <h2 class="section-title">If You Serve Food, ServeStack Fits In</h2>
+                <p class="section-sub">From a small café to a busy fine-dining room, the system adapts to how you actually run your service.</p>
+            </div>
+            <div class="biz-grid">
+                <div class="biz-card reveal">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="32" width="52" height="32" rx="4" fill="#FEF3C7"/><path d="M14 32 Q40 18 66 32" fill="none" stroke="#F59E0B" stroke-width="2"/><ellipse cx="40" cy="40" rx="10" ry="4" fill="#FDE68A"/><path d="M30 70 v6 M50 70 v6" stroke="#92400E" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Café</h3>
+                    <p>Quick counter orders, QR menus, and fast table turnover.</p>
+                </div>
+                <div class="biz-card reveal" data-delay="60">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="26" width="40" height="36" rx="4" fill="#DBEAFE"/><rect x="26" y="32" width="28" height="3" fill="#1F6FEB"/><rect x="26" y="40" width="20" height="3" fill="#3B82F6"/><rect x="26" y="48" width="24" height="3" fill="#3B82F6"/><circle cx="40" cy="58" r="3" fill="#1F6FEB"/><path d="M20 26 Q40 14 60 26" fill="none" stroke="#1F6FEB" stroke-width="2"/></svg>
+                    </div>
+                    <h3>Restaurant</h3>
+                    <p>Full dine-in flow — tables, orders, kitchen, billing, and tips.</p>
+                </div>
+                <div class="biz-card reveal" data-delay="120">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="22" y="22" width="36" height="40" rx="4" fill="#F3E8FF"/><path d="M22 22 L40 12 L58 22" fill="none" stroke="#8B5CF6" stroke-width="2"/><rect x="30" y="34" width="20" height="3" fill="#7C3AED"/><rect x="30" y="42" width="14" height="3" fill="#A78BFA"/><path d="M40 50 v12" stroke="#8B5CF6" stroke-width="2"/><path d="M36 50 a4 4 0 0 1 8 0" fill="none" stroke="#8B5CF6" stroke-width="2"/></svg>
+                    </div>
+                    <h3>Cloud Kitchen</h3>
+                    <p>Manage online orders, packaging stations, and delivery partners.</p>
+                </div>
+                <div class="biz-card reveal" data-delay="180">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns://www.w3.org/2000/svg"><ellipse cx="40" cy="40" rx="26" ry="20" fill="#FED7AA"/><ellipse cx="40" cy="34" rx="20" ry="6" fill="#FCD34D"/><path d="M20 40 q20 14 40 0" fill="none" stroke="#9A3412" stroke-width="2"/><circle cx="34" cy="34" r="1.5" fill="#9A3412"/><circle cx="44" cy="34" r="1.5" fill="#9A3412"/><circle cx="39" cy="34" r="1.5" fill="#9A3412"/></svg>
+                    </div>
+                    <h3>Bakery</h3>
+                    <p>Track pastries by batch, weigh-and-sell items, and pre-orders.</p>
+                </div>
+                <div class="biz-card reveal" data-delay="240">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M28 28 h24 v6 l-2 28 a4 4 0 0 1 -4 4 h-12 a4 4 0 0 1 -4 -4 l-2 -28 z" fill="#DCFCE7"/><path d="M28 28 a12 12 0 0 1 24 0" fill="none" stroke="#22C55E" stroke-width="2"/><rect x="32" y="40" width="16" height="3" fill="#16A34A"/><circle cx="40" cy="50" r="3" fill="#FCD34D"/></svg>
+                    </div>
+                    <h3>Juice Shop</h3>
+                    <p>Fast counter sales, custom combos, and ingredient-level stock.</p>
+                </div>
+                <div class="biz-card reveal" data-delay="300">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M22 28 a8 8 0 0 1 8 -8 h20 a8 8 0 0 1 8 8 v8 a8 8 0 0 1 -8 8 h-20 a8 8 0 0 1 -8 -8 z" fill="#FEE2E2"/><path d="M22 44 h36 l-2 18 h-32 z" fill="#FECACA"/><path d="M30 20 v-6 M40 20 v-8 M50 20 v-6" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/><rect x="28" y="32" width="4" height="2" fill="#FCD34D"/><rect x="38" y="32" width="4" height="2" fill="#FCD34D"/><rect x="48" y="32" width="4" height="2" fill="#FCD34D"/></svg>
+                    </div>
+                    <h3>Fast Food</h3>
+                    <p>Speed-first ordering, combo deals, and quick-serve kitchen flow.</p>
+                </div>
+                <div class="biz-card reveal" data-delay="360">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="32" width="40" height="22" rx="4" fill="#FEF3C7"/><path d="M54 40 h8 a4 4 0 0 1 4 4 v4 a4 4 0 0 1 -4 4 h-8" fill="none" stroke="#F59E0B" stroke-width="2"/><circle cx="24" cy="58" r="4" fill="#1F2937"/><circle cx="46" cy="58" r="4" fill="#1F2937"/><path d="M14 32 q12 -14 28 -6" fill="none" stroke="#F59E0B" stroke-width="2"/><rect x="22" y="40" width="6" height="3" fill="#FCD34D"/></svg>
+                    </div>
+                    <h3>Food Truck</h3>
+                    <p>Compact, mobile-ready setup with offline order handling.</p>
+                </div>
+                <div class="biz-card reveal" data-delay="420">
+                    <div class="biz-illu">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M22 30 q18 -14 36 0 v22 q-18 -8 -36 0 z" fill="#DBEAFE"/><path d="M22 30 q18 -10 36 0" fill="none" stroke="#1F6FEB" stroke-width="2"/><rect x="36" y="38" width="8" height="3" fill="#1F6FEB"/><path d="M40 41 v8" stroke="#1F6FEB" stroke-width="2"/><path d="M40 49 l-4 4 M40 49 l4 4" stroke="#1F6FEB" stroke-width="2" stroke-linecap="round"/><circle cx="30" cy="46" r="2" fill="#1F6FEB"/><circle cx="50" cy="46" r="2" fill="#1F6FEB"/></svg>
+                    </div>
+                    <h3>Fine Dining</h3>
+                    <p>Course-by-course service, table reservations, and premium billing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 — DASHBOARD -->
+    <section class="section section-soft" id="dashboard">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">Your business, in real time</span>
+                <h2 class="section-title">See Your Numbers While You Walk the Floor</h2>
+                <p class="section-sub">No more waiting for the accountant. The full picture of your day is right here, refreshed in real time.</p>
+            </div>
+            <div class="dash">
+                <div class="dash-card dash-revenue reveal">
+                    <div class="dash-label">Today's Revenue</div>
+                    <div class="dash-value">₹ 1,84,250</div>
+                    <div class="dash-trend up">▲ 12.4% vs yesterday</div>
+                    <svg class="dash-spark" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,30 15,22 30,26 45,18 60,20 75,10 90,14 105,6 120,8" fill="none" stroke="#22C55E" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="dash-card reveal" data-delay="60">
+                    <div class="dash-label">Orders Today</div>
+                    <div class="dash-value">326</div>
+                    <div class="dash-trend up">▲ 8 orders/hr</div>
+                </div>
+                <div class="dash-card reveal" data-delay="120">
+                    <div class="dash-label">Avg. Bill Value</div>
+                    <div class="dash-value">₹ 565</div>
+                    <div class="dash-trend up">▲ 4.2%</div>
+                </div>
+                <div class="dash-card reveal" data-delay="180">
+                    <div class="dash-label">Pending KOTs</div>
+                    <div class="dash-value">7</div>
+                    <div class="dash-trend down">Oldest 3m 12s</div>
+                </div>
+
+                <div class="dash-card dash-list reveal" data-delay="60">
+                    <div class="dash-label">Top Selling Items</div>
+                    <ul class="dash-list-items">
+                        <li><span>Butter Chicken</span><b>72 sold</b></li>
+                        <li><span>Garlic Naan</span><b>64 sold</b></li>
+                        <li><span>Paneer Tikka</span><b>48 sold</b></li>
+                        <li><span>Masala Dosa</span><b>39 sold</b></li>
+                        <li><span>Filter Coffee</span><b>31 sold</b></li>
+                    </ul>
+                </div>
+                <div class="dash-card dash-bars reveal" data-delay="120">
+                    <div class="dash-label">Busy Hours</div>
+                    <div class="bars">
+                        <div class="bar" style="--h:30%"><span>10</span></div>
+                        <div class="bar" style="--h:55%"><span>12</span></div>
+                        <div class="bar" style="--h:90%"><span>1</span></div>
+                        <div class="bar" style="--h:75%"><span>2</span></div>
+                        <div class="bar" style="--h:40%"><span>4</span></div>
+                        <div class="bar" style="--h:60%"><span>7</span></div>
+                        <div class="bar" style="--h:95%"><span>8</span></div>
+                        <div class="bar" style="--h:70%"><span>9</span></div>
+                    </div>
+                    <div class="bars-legend">Lunch and dinner peaks are clear — schedule accordingly.</div>
+                </div>
+                <div class="dash-card dash-alerts reveal" data-delay="180">
+                    <div class="dash-label">Inventory Alerts</div>
+                    <ul class="dash-list-items alerts">
+                        <li><span>Tomatoes</span><b class="alert-low">Low</b></li>
+                        <li><span>Cooking Oil</span><b class="alert-low">Low</b></li>
+                        <li><span>Butter</span><b class="alert-mid">Reorder</b></li>
+                        <li><span>Basil</span><b class="alert-ok">Stocked</b></li>
+                    </ul>
+                </div>
+                <div class="dash-card reveal" data-delay="240">
+                    <div class="dash-label">Expenses Today</div>
+                    <div class="dash-value">₹ 28,400</div>
+                    <div class="dash-trend up">12 entries logged</div>
+                </div>
+                <div class="dash-card dash-profit reveal" data-delay="300">
+                    <div class="dash-label">Profit Overview</div>
+                    <div class="profit-line">
+                        <span class="profit-rev">Revenue <b>₹ 1.84L</b></span>
+                        <span class="profit-cost">Cost <b>₹ 1.12L</b></span>
+                    </div>
+                    <div class="profit-bar">
+                        <div class="profit-bar-fill"></div>
+                    </div>
+                    <div class="profit-num">Net <b>₹ 72,450</b> · 39% margin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8 — SETUP -->
+    <section class="section section-soft" id="setup">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">Simple setup</span>
+                <h2 class="section-title">Up and Running in Three Simple Steps</h2>
+                <p class="section-sub">No technical team. No long downtime. We help you go live at the pace of your service.</p>
+            </div>
+            <div class="setup">
+                <div class="setup-step reveal">
+                    <div class="setup-num">1</div>
+                    <h3>Book a Demo</h3>
+                    <p>See ServeStack in action with a guided walkthrough tailored to your kind of business.</p>
+                </div>
+                <div class="setup-arrow reveal" data-delay="60">→</div>
+                <div class="setup-step reveal" data-delay="60">
+                    <div class="setup-num">2</div>
+                    <h3>Installation &amp; Menu Setup</h3>
+                    <p>Our team helps install hardware, configure your menu, taxes, and table layout.</p>
+                </div>
+                <div class="setup-arrow reveal" data-delay="120">→</div>
+                <div class="setup-step reveal" data-delay="120">
+                    <div class="setup-num">3</div>
+                    <h3>Start Taking Orders</h3>
+                    <p>Train your team in an afternoon. Begin service with confidence the very same day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10 — FINAL CTA -->
+    <section class="section cta-section" id="demo">
+        <div class="container">
+            <div class="cta-card reveal">
+                <div class="cta-bg"></div>
+                <div class="cta-content">
+                    <span class="kicker">One last thought</span>
+                    <h2 class="cta-title">Your Restaurant Deserves <br>Better Than Manual Work.</h2>
+                    <p class="cta-sub">Spend less time managing operations and more time delighting customers. The day you switch is the day your evenings get easier.</p>
+                    <div class="cta-actions">
+                        <a href="#" class="btn btn-light btn-lg">
+                            Book Free Demo
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#how" class="btn btn-ghost-light btn-lg">See how it works</a>
+                    </div>
+                    <div class="cta-foot">
+                        ✓ No credit card &nbsp; · &nbsp; ✓ Free onboarding &nbsp; · &nbsp; ✓ Cancel anytime
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 32 32" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="url(#logoGradF)"/>
+                            <path d="M9 11h14v2H9zm0 5h14v2H9zm0 5h9v2H9z" fill="white"/>
+                            <defs>
+                                <linearGradient id="logoGradF" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1F6FEB"/>
+                                    <stop offset="1" stop-color="#22C55E"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="logo-text">ServeStack</span>
+                </a>
+                <p>Built for restaurant and café owners who want calmer days and clearer numbers.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#how">How it works</a>
+                    <a href="#savings">Savings</a>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#businesses">For your business</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Help center</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 ServeStack. Made for restaurants that care.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
